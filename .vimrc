@@ -1,14 +1,20 @@
+" Visual.
+set number
+set ruler
+
 " Avoid unexpected behavior when using a different machine.
 set nocompatible
 
-set number
-
-" Tab length
+" Tab length.
 set tabstop=4
 set softtabstop=4
+set shiftwidth=4
 set expandtab
 
-" Auto indent for specific filetypes.
+" Indention.
+set autoindent
+set smartindent
+
 if has('filetype')
 	filetype indent plugin on
 endif
