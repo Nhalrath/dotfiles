@@ -1,30 +1,31 @@
-" Visual.
 set number
 set ruler
 
-" Avoid unexpected behavior when using a different machine.
 set nocompatible
 
-" Tab length.
+set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set expandtab
 
-" Indention.
 set autoindent
 set smartindent
+
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+
+autocmd VimEnter * NERDTree | wincmd p
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 if has('filetype')
 	filetype indent plugin on
 endif
 
-" Enable syntax highlighting.
 if has('syntax')
 	syntax on
 endif
 
-" Allow usage of mouse for all modes.
 if has('mouse')
 	set mouse=a
 endif
